@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PokemonSelector from '../components/PokemonSelector.js'
 import PokemonDetail from '../components/PokemonDetail.js'
+import PokemonSearch from '../components/PokemonSearch.js';
 
 class Pokedex extends Component {
 
@@ -19,7 +20,7 @@ class Pokedex extends Component {
   }
 
   componentDidMount(){
-    fetch('https://pokeapi.co/api/v2/pokemon')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     .then(response => response.json())
     .then(pokemon => this.setState({ pokemonList: pokemon.results }))
     .catch(err => console.error)
@@ -35,9 +36,10 @@ class Pokedex extends Component {
   render(){
     return(
       <Fragment>
-        <h1>I am the Pokedex</h1>
+        <h1>First Generation Pokedex</h1>
+        <PokemonSearch pokemonList={this.state.pokemonList}/>
         <PokemonSelector pokemonList={this.state.pokemonList} onSelectPokemon={this.setSelectedPokemonUrl}/>
-        <PokemonDetail/>
+        <PokemonDetail pokemon={this.state.selectedPokemon}/>
       </Fragment>
     )
   }
