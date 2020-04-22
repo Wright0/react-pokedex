@@ -30,3 +30,9 @@ article.search > label{
     color: white;
     line-height: 1rem;
 }
+
+article.search> ul{
+    margin:0px;
+    background-color: #B9DEF8 ;
+    border-radius: 10%;
+}

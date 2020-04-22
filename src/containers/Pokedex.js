@@ -69,7 +69,6 @@ const Pokedex = () => {
         <div className="right-control-pad">
             <div className="right-info-box">
                 <section className="search">
-                    <PokemonNumberSearch pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl}/>
                     <PokemonNameSearch pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl}/>
                 </section>
             </div>
@@ -80,5 +79,6 @@ const Pokedex = () => {
   )
 }
 
+/* <PokemonNumberSearch pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl}/> */
 
 export default Pokedex;

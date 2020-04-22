@@ -5,7 +5,7 @@ const SelectedPokemonDetail = ({pokemon}) => {
   if (!pokemon) return null;
 
   const pokemonType = pokemon.types.map(typeObject => {
-    return <ul><li>{typeObject.type.name}</li></ul>;
+    return <li key={typeObject.type.name}>{typeObject.type.name}</li>;
   })
 
   // This turns the api's measurements into kgs
@@ -37,11 +37,13 @@ const SelectedPokemonDetail = ({pokemon}) => {
   return(
     <article id="pokemon-info-box">
       { returnTypeSingularOrPlural() }
-      { pokemonType }
+      <ul>
+        { pokemonType }
+      </ul>
       <p>Weight:</p>
       <p>{pokemonWeight}kg</p>
       <p>Height:</p>
-      <p>{ pokemonHeight() }</p>
+      { pokemonHeight() }
     </article>
   )
 }
