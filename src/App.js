@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
 import Pokedex from './containers/Pokedex'
+import './containers/Pokedex.css';
 
 function App() {
   return (
-    <Pokedex/>
+    <>
+      <h1>Who's that Pokemon?</h1>
+      <Pokedex/>
+    </>
   );
 }
 

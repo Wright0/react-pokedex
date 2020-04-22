@@ -1,48 +1,84 @@
-import React, { Component, Fragment } from 'react';
-import PokemonSelector from '../components/PokemonSelector.js'
-import PokemonDetail from '../components/PokemonDetail.js'
-import PokemonSearch from '../components/PokemonSearch.js';
+import React, { useEffect, useState } from 'react';
+import SelectedPokemonImage from '../components/SelectedPokemonImage.js'
+import SelectedPokemonDetail from '../components/SelectedPokemonDetail.js'
+import PokemonNameSearch from '../components/PokemonNameSearch.js';
+import PokemonNumberSearch from '../components/PokemonNumberSearch.js';
+import './Pokedex.css';
 
-class Pokedex extends Component {
+const Pokedex = () => {
 
-  constructor(props){
-    super(props)
-    this.state = {
-      pokemonList: [],
-      selectedPokemonUrl:'',
-      selectedPokemon: null
-    };
-    this.setSelectedPokemonUrl = this.setSelectedPokemonUrl.bind(this);
-  }
+  const [pokemonList, setPokemonList] = useState([])
+  const [selectedPokemonUrl, setSelectedPokemonUrl] = useState('')
+  const [selectedPokemon, setSelectedPokemon] = useState(null)
 
-  setSelectedPokemonUrl(pokemonUrl){
-      this.setState({selectedPokemonUrl: pokemonUrl})
-  }
-
-  componentDidMount(){
+  const getPokemon = () => {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     .then(response => response.json())
-    .then(pokemon => this.setState({ pokemonList: pokemon.results }))
+    .then(pokemon => setPokemonList(pokemon.results))
     .catch(err => console.error)
   }
 
-  componentDidUpdate(){
-    fetch(this.state.selectedPokemonUrl)
+  const fetchSelectedPokemon = () => {
+    fetch(selectedPokemonUrl)
     .then(response => response.json())
-    .then(pokemonObject => this.setState({ selectedPokemon: pokemonObject }))
+    .then(pokemonObject => setSelectedPokemon(pokemonObject))
     .catch(err => console.error)
   }
 
-  render(){
-    return(
-      <Fragment>
-        <h1>First Generation Pokedex</h1>
-        <PokemonSearch pokemonList={this.state.pokemonList}/>
-        <PokemonSelector pokemonList={this.state.pokemonList} onSelectPokemon={this.setSelectedPokemonUrl}/>
-        <PokemonDetail pokemon={this.state.selectedPokemon}/>
-      </Fragment>
-    )
-  }
+  useEffect( () => {
+    getPokemon();
+  }, [])
+
+  useEffect( () => {
+    fetchSelectedPokemon();
+  }, [selectedPokemonUrl])
+
+  return(
+      <section className="pokedex-box">
+        <div className="main-pokedex-body">
+            <div className="left-gray-circle">
+                <div className="left-darkgrey-circle"></div>
+                <div className="left-green-circle"></div>
+            </div>
+            <div className="left-red-vertical-bar"></div>
+            <div className="hinge-bar"></div>
+            <div className="hinge-bar-indent"></div>
+            <div className="info-box-border-top">
+                <div className="info-box-border-double"></div>
+                <div className="top-darkgrey-box"></div>
+                <section className="info-box">
+                  <SelectedPokemonImage pokemon={selectedPokemon}/>
+                </section>
+            </div>
+            <div className="info-box-border-bottom">
+                <div className="info-box-border-double"></div>
+                <div className="bottom-darkgrey-box"></div>
+                
+                <section className="info-box">
+                  <SelectedPokemonDetail pokemon={selectedPokemon}/>
+                </section>
+            </div>
+            <div className="d-pad">
+                <div className="button b-up"></div>
+                <div className="button b-right"></div>
+                <div className="button b-down"></div>
+                <div className="button b-left"></div>
+                <div className="button b-middle"></div>
+            </div>
+        </div>
+        <div className="right-control-pad">
+            <div className="right-info-box">
+                <section className="search">
+                    <PokemonNumberSearch pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl}/>
+                    <PokemonNameSearch pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl}/>
+                </section>
+            </div>
+            <div className="cp-gray-circle"></div>
+            <div className="cp-gray-square"></div>
+        </div>
+      </section> 
+  )
 }
+
 
 export default Pokedex;

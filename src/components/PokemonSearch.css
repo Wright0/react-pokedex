@@ -1,0 +1,32 @@
+.right-info-box{
+    position:absolute;
+    left:2%;
+    top:11%;
+    padding: 0% 5%;
+
+    width:77%;
+    height:78%;
+    /* border: solid white 0.1px; */
+    z-index:2;
+}
+
+article.search{
+    height: 100%;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+article.search> input{
+    width: 65%;
+    margin: 2.5% 0%;
+}
+
+article.search > label{
+    margin: 2.5% 0%;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 70%;
+    color: white;
+    line-height: 1rem;
+}
