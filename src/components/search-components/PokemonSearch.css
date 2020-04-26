@@ -20,7 +20,7 @@ article.search{
 
 article.search> input{
     width: 65%;
-    margin: 2.5% 0%;
+    margin: 2.5% 0% 0% 0%;
 }
 
 article.search > label{
@@ -32,7 +32,20 @@ article.search > label{
 }
 
 article.search> ul{
-    margin:0px;
+    margin:0%;
+    padding:5% 10%;
+    list-style-type: none;
     background-color: #B9DEF8 ;
-    border-radius: 10%;
+    /* border-radius: 10%; */
+}
+
+article.search> ul > li{
+    margin:0.25rem 0rem;
+    cursor: pointer;
+}
+
+article.search> ul > li:hover{
+    margin:0.25rem 0rem;
+    cursor: pointer;
+    color:green;
 }

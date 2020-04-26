@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import SelectedPokemonImage from '../components/SelectedPokemonImage.js'
 import SelectedPokemonDetail from '../components/SelectedPokemonDetail.js'
-import PokemonNameSearch from '../components/PokemonNameSearch.js';
-import PokemonNumberSearch from '../components/PokemonNumberSearch.js';
+import PokemonNameSearch from '../components/search-components/PokemonNameSearch.js';
+import SearchExample from '../components/search-components/SearchExample';
 import './Pokedex.css';
 
 const Pokedex = () => {
@@ -69,7 +69,7 @@ const Pokedex = () => {
         <div className="right-control-pad">
             <div className="right-info-box">
                 <section className="search">
-                    <PokemonNameSearch pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl}/>
+                  <SearchExample pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl} />
                 </section>
             </div>
             <div className="cp-gray-circle"></div>
@@ -80,5 +80,6 @@ const Pokedex = () => {
 }
 
 /* <PokemonNumberSearch pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl}/> */
+/* <PokemonNameSearch pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl}/> */
 
 export default Pokedex;

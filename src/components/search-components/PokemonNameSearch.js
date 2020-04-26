@@ -37,11 +37,14 @@ const PokemonNameSearch = ({pokemonList, onSelectPokemon}) => {
         <article className="search">
             <label htmlFor="name-search">Search by name:</label>
             <input type="text" name="name-search" id="text-search" onChange={handleSearchInputChange}></input>
-            <ul>
-                { foundPokemon }
-            </ul>
+            {foundPokemon.length > 0 &&
+                <ul>
+                    { foundPokemon }
+                </ul>
+            }
         </article>
     )
 }
 
 export default PokemonNameSearch;
+

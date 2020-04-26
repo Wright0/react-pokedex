@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+
+.select-search {
+    position: absolute;
+    top: 28%;
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+.select-search *,
+.select-search *::after,
+.select-search *::before {
+    box-sizing: inherit;
+}
+
+    /* .select-search.is-disabled {
+        opacity: 0.5;
+    } */
+
+    /* This ensures the little search triangle doesn't move */
+    .select-search__value {
+        position: relative;
+    }
+
+    /* The search bar triangle. */
+    .select-search__value::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 9px);
+        right:7%;
+        width: 11px;
+        height: 11px;
+        transform: rotate(45deg);
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        pointer-events: none;
+    }
+
+    /* The input and selected option styling */
+    .select-search__input {
+        display: block;
+        height: 36px;
+        width: 100%;
+        padding: 0 8%;
+        background: #fff;
+        border: none;
+        box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        outline: none;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 14px;
+        text-align: left;
+        line-height: 36px;
+        -webkit-appearance: none;
+    }
+    /* Makes it a pointer until you click and then it becomes a writing hover */
+    .select-search .select-search__input {
+        cursor: pointer;
+    }
+
+    .select-search__input::-webkit-search-decoration,
+    .select-search__input::-webkit-search-cancel-button,
+    .select-search__input::-webkit-search-results-button,
+    .select-search__input::-webkit-search-results-decoration {
+        -webkit-appearance:none;
+    }
+
+    .select-search__input:hover {
+        border-color: #2FCC8B;
+    }
+
+    .select-search__input:not([readonly]):focus {
+        cursor: initial;
+    }
+
+    /* This is the full drop down background. */
+    .select-search__select {
+        box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, 0.15);
+        height: auto;
+        max-height: 150px;
+        overflow: auto;
+        border-top: 1px solid #eee;
+        border-radius: 0 0 3px 3px;
+    }
+
+    /* This adds a top bar for some reason? No it does not... */
+    /* .select-search .select-search__select {
+        position: absolute;
+        z-index: 2;
+        top: 100%;
+        right: 0;
+        left: 0;
+        border-radius: 3px;
+        overflow: auto;
+        max-height: 160px;
+    } */
+
+    .select-search__options {
+        margin:0px;
+        padding:0px;
+        list-style: none;
+    }
+
+    /* Adds border to top of each item, except first item. Creates separation */
+    .select-search__row:not(:first-child) {
+        border-top: 1px solid #eee;
+    }
+
+    /* Handles styling of each option */
+    .select-search__option {
+        display: block;
+        height: 36px;
+        width: 100%;
+        padding: 0 16px;
+        background: #fff;
+        border: none;
+        outline: none;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 14px;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .select-search-box__option{
+        padding: 0px;
+        margin:0px;
+    }
+
+     /* Handles highlighting of the selected item */
+    .select-search__option.is-selected {
+        background: #2FCC8B;
+        color: #fff;
+    }
+
+    /* handles highlighting of hovered items */
+    .select-search__option.is-highlighted,
+    .select-search__option:not(.is-selected):hover {
+        background: purple;
+    }
+
+    /* This is when you highlight over the selected one */
+    .select-search__option.is-highlighted.is-selected,
+    .select-search__option.is-selected:hover {
+        background: #2eb378;
+        color: #fff;
+    }
