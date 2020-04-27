@@ -13,7 +13,7 @@ const Search = ({pokemonList, onSelectPokemon}) => {
         options={pokemonListFormatted}
         onChange={handleUpdatePokemonUrl}
         multiple={false}
-        placeholder="Search enabled"
+        placeholder="Enter name"
         search
         />
     )             
