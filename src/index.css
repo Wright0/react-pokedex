@@ -1,11 +1,21 @@
-body {
-  background-color: #333;
-  margin: 2%;
+:root {
+  --main-body: #FF3B07;
+  --main-body-shadow: #DD2E07;
+  --green: #709924;
+  --screen: #BADEF9;
+  --dark-grey:#263139;
+  --screen-border: #95A3A9;
+  --medium-grey:#4E656F;
+  --off-white:#D5D7D9;
+}
+
+body{
+  background-color:#f8f8ff;
 }
 
 h1{
   margin: 4% 0%;
-  color:white;
+  color:#333;
   font-family:'Press Start 2P', sans-serif;
   text-align: center;
 }
@@ -19,3 +29,5 @@ h2{
 p{
   margin: 5%;
 }
+
+

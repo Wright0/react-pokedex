@@ -1,71 +1,9 @@
-.top-darkgrey-box{
-    position:absolute;
-    top:7.5%;
-    left: -15%;
-    
-    background-color: #263139;
-    border-radius:10%;
-    width:60%;
-    height:85%;
-    z-index: 1;
-}
-
-.info-box-border-top{
-    position:absolute;
-    left:23%;
-    top:4%;
-
-    border-radius: 7%;
-    background-color: #95A3A9;
-    width:65%;
-    height:38%;
-}
-
-.info-box-border-bottom{
-    position:absolute;
-    left:23%;
-    bottom:4%;
-
-    border-radius: 7%;
-    background-color: #95A3A9;
-    width:65%;
-    height:38%;
-}
-
-.info-box-border-double{
-    position:absolute;
-    border-radius: 7%;
-    background-color: #95A3A9;
-    width:100%;
-    height:100%;
-    z-index:2;
-}
-
-.info-box{
-    position:absolute;
-    left:10%;
-    top:12.5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: #B9DEF8;
-    width:80%;
-    height:75%;
-    z-index:3;
-}
-
-#pokemon-image-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height:100%;
-    width:100%;
-    color:#253038;
-}
 
 #pokemon-image-box > img{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
     height: 185%;
     width: 60%;
 }
@@ -77,7 +15,6 @@
     width:100%;
     overflow-y: scroll
 }
-
 
 #pokemon-info-box > ul {
     margin:0px;

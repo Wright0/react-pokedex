@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SelectedPokemonImage from '../components/SelectedPokemonImage.js'
 import SelectedPokemonDetail from '../components/SelectedPokemonDetail.js'
-import PokemonNameSearch from '../components/search-components/PokemonNameSearch.js';
-import SearchExample from '../components/search-components/SearchExample';
+import SearchExample from '../components/search-components/SearchExample.js';
 import './Pokedex.css';
 
 const Pokedex = () => {
@@ -34,48 +33,63 @@ const Pokedex = () => {
   }, [selectedPokemonUrl])
 
   return(
-      <section className="pokedex-box">
+    <>
+    <section className="pokedex-box">
         <div className="main-pokedex-body">
-            <div className="left-gray-circle">
-                <div className="left-darkgrey-circle"></div>
+            <div className="left-grey-circle">
                 <div className="left-green-circle"></div>
             </div>
-            <div className="left-red-vertical-bar"></div>
+            <div className="bottom-left-corner-squared"></div>
             <div className="hinge-bar"></div>
             <div className="hinge-bar-indent"></div>
-            <div className="info-box-border-top">
-                <div className="info-box-border-double"></div>
-                <div className="top-darkgrey-box"></div>
+            <div className="screen-border-top">
+                <div className="screen-border-double"></div>
+                <div className="screen">
                 <section className="info-box">
                   <SelectedPokemonImage pokemon={selectedPokemon}/>
                 </section>
-            </div>
-            <div className="info-box-border-bottom">
-                <div className="info-box-border-double"></div>
-                <div className="bottom-darkgrey-box"></div>
+                </div>
+                <section className="top-search">
+                  <SearchExample pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl} />
+                </section>  
+                  <div className="darkgrey-box">
+                      <div className="audio-hole"></div>
+                  </div>
+                  <div className="darkgrey-circle"></div> 
                 
+            </div>
+            <div className="screen-border-bottom">
+                <div className="d-pad">
+                    <div className="button b-up"></div>
+                    <div className="button b-right"></div>
+                    <div className="button b-down"></div>
+                    <div className="button b-left"></div>
+                    <div className="button b-middle"></div>
+                </div>
+                <div className="screen-border-double"></div>
+                <div className="darkgrey-box">
+                    <div className="select-button-top"></div>
+                    <div className="select-button-bottom"></div>
+                </div>
+                <div className="screen">
                 <section className="info-box">
                   <SelectedPokemonDetail pokemon={selectedPokemon}/>
                 </section>
+                </div>
+                <div className="darkgrey-circle"></div> 
             </div>
-            <div className="d-pad">
-                <div className="button b-up"></div>
-                <div className="button b-right"></div>
-                <div className="button b-down"></div>
-                <div className="button b-left"></div>
-                <div className="button b-middle"></div>
+            <div className="right-control-pad">
+                <div className="joystick">
+                    <div className="joystick-center"></div>
+                    <div className="joystick-ring"></div>
+                    <div className="joystick-ring-button"></div>
+                </div>
+                <div className="joystick-background-circle"></div>
+                <div className="joystick-background-square"></div>
             </div>
         </div>
-        <div className="right-control-pad">
-            <div className="right-info-box">
-                <section className="search">
-                  <SearchExample pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl} />
-                </section>
-            </div>
-            <div className="cp-gray-circle"></div>
-            <div className="cp-gray-square"></div>
-        </div>
-      </section> 
+    </section> 
+      </>
   )
 }
 
@@ -83,3 +97,43 @@ const Pokedex = () => {
 /* <PokemonNameSearch pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl}/> */
 
 export default Pokedex;
+
+{/* <section className="pokedex-box">
+<div className="main-pokedex-body">
+    <div className="left-gray-circle">
+        <div className="left-darkgrey-circle"></div>
+        <div className="left-green-circle"></div>
+    </div>
+    <div className="left-red-vertical-bar"></div>
+    <div className="hinge-bar"></div>
+    <div className="hinge-bar-indent"></div>
+    <div className="info-box-border-top">
+        <div className="info-box-border-double"></div>
+        <div className="top-darkgrey-box"></div>
+        <section className="info-box">
+          <SearchExample pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl} />
+          <SelectedPokemonImage pokemon={selectedPokemon}/>
+        </section>
+    </div>
+    <div className="info-box-border-bottom">
+        <div className="info-box-border-double"></div>
+        <div className="bottom-darkgrey-box"></div>
+        
+        <section className="info-box">
+          <SelectedPokemonDetail pokemon={selectedPokemon}/>
+        </section>
+    </div>
+    <div className="d-pad">
+        <div className="button b-up"></div>
+        <div className="button b-right"></div>
+        <div className="button b-down"></div>
+        <div className="button b-left"></div>
+        <div className="button b-middle"></div>
+    </div>
+</div>
+<div className="right-control-pad">
+
+    <div className="cp-gray-circle"></div>
+    <div className="cp-gray-square"></div>
+</div>
+</section>  */}
