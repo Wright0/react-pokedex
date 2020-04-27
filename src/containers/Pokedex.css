@@ -83,7 +83,7 @@
 
 section.top-search{
     position:absolute;
-    top:6.1%;
+    top:15%;
     left:-62%;
     width:59%;
     height:85.5%;
@@ -99,7 +99,7 @@ section.top-search{
     background-color: #263139;
     border-radius: 50%;
     width:70%;
-    height:85.5%;
+    height:85.8%;
     z-index: 2;
 }
 
@@ -111,7 +111,7 @@ section.top-search{
     background-color: var(--dark-grey);;
     border-radius: 0% 2% 2% 0%;
     width:146%;
-    height:85.5%;
+    height:85.8%;
     z-index: 2;
 }
 
@@ -180,8 +180,8 @@ section.top-search{
 
 .d-pad {
     position: absolute;
-    top: 23%;
-    left: -46%;
+    top: 24.5%;
+    left: -52%;
     
     height: 50%;
     width: 39%;

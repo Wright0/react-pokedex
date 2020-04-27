@@ -1,3 +1,4 @@
+/* CSS BASE FROM react-search-select package */
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
 
 .select-search {
@@ -131,19 +132,19 @@
 
      /* Handles highlighting of the selected item */
     .select-search__option.is-selected {
-        background: #2FCC8B;
+        background: var(--screen-border);
         color: #fff;
     }
 
     /* handles highlighting of hovered items */
     .select-search__option.is-highlighted,
     .select-search__option:not(.is-selected):hover {
-        background: purple;
+        background: #e0421f;
     }
 
     /* This is when you highlight over the selected one */
     .select-search__option.is-highlighted.is-selected,
     .select-search__option.is-selected:hover {
-        background: #2eb378;
+        background: var(--medium-grey);
         color: #fff;
     }
