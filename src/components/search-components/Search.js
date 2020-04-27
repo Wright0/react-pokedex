@@ -1,8 +1,8 @@
 import React from 'react';
 import SelectSearch from 'react-select-search';
-import './SearchExample.css';
+import './Search.css';
 
-const SearchExample = ({pokemonList, onSelectPokemon}) => {
+const Search = ({pokemonList, onSelectPokemon}) => {
 
     const pokemonListFormatted = pokemonList.map(({ url: value, ...rest }) => ({ value, ...rest }));
     
@@ -19,4 +19,4 @@ const SearchExample = ({pokemonList, onSelectPokemon}) => {
     )             
 }
 
-export default SearchExample;
+export default Search;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SelectedPokemonImage from '../components/SelectedPokemonImage.js'
 import SelectedPokemonDetail from '../components/SelectedPokemonDetail.js'
-import SearchExample from '../components/search-components/SearchExample.js';
+import Search from '../components/search-components/Search.js';
 import './Pokedex.css';
 
 const Pokedex = () => {
@@ -50,7 +50,7 @@ const Pokedex = () => {
                 </section>
                 </div>
                 <section className="top-search">
-                  <SearchExample pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl} />
+                  <Search pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl} />
                 </section>  
                   <div className="darkgrey-box">
                       <div className="audio-hole"></div>
