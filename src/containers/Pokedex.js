@@ -42,6 +42,7 @@ const Pokedex = () => {
             <div className="bottom-left-corner-squared"></div>
             <div className="hinge-bar"></div>
             <div className="hinge-bar-indent"></div>
+
             <div className="screen-border-top">
                 <div className="screen-border-double"></div>
                 <div className="screen">
@@ -49,35 +50,43 @@ const Pokedex = () => {
                   <SelectedPokemonImage pokemon={selectedPokemon}/>
                 </section>
                 </div>
-                <section className="top-search">
-                  <Search pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl} />
-                </section>  
-                  <div className="darkgrey-box">
-                      <div className="audio-hole"></div>
-                  </div>
-                  <div className="darkgrey-circle"></div> 
                 
+                <div className="darkgrey-panel">
+                  <section className="top-search">
+                    <Search pokemonList={pokemonList} onSelectPokemon={setSelectedPokemonUrl} />
+                  </section>
+                  <div className="darkgrey-circle"></div> 
+                  <div className="darkgrey-box">
+                    <div className="audio-hole"></div>
+                  </div>
+                  
+                </div>
             </div>
+
             <div className="screen-border-bottom">
-                <div className="d-pad">
+                <div className="screen-border-double"></div>
+                <div className="screen">
+                <section className="info-box">
+                  <SelectedPokemonDetail pokemon={selectedPokemon}/>
+                </section>
+                </div>
+                
+                <div className="darkgrey-panel">
+                  <div className="d-pad">
                     <div className="button b-up"></div>
                     <div className="button b-right"></div>
                     <div className="button b-down"></div>
                     <div className="button b-left"></div>
                     <div className="button b-middle"></div>
                 </div>
-                <div className="screen-border-double"></div>
-                <div className="darkgrey-box">
+                  <div className="darkgrey-circle"></div> 
+                  <div className="darkgrey-box">
                     <div className="select-button-top"></div>
                     <div className="select-button-bottom"></div>
+                  </div>
                 </div>
-                <div className="screen">
-                <section className="info-box">
-                  <SelectedPokemonDetail pokemon={selectedPokemon}/>
-                </section>
-                </div>
-                <div className="darkgrey-circle"></div> 
             </div>
+
             <div className="right-control-pad">
                 <div className="joystick">
                     <div className="joystick-center"></div>

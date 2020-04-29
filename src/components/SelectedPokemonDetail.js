@@ -4,6 +4,16 @@ import './SelectedPokemonPanels.css';
 const SelectedPokemonDetail = ({pokemon}) => {
   if (!pokemon) return null;
 
+  const returnXPokemonMovesArray = (numberOfMoves) => {
+    const finalMoveArrayPostion = numberOfMoves + 1
+    const movesArray = pokemon.moves.slice(0, finalMoveArrayPostion)
+    return movesArray;
+  }
+
+  const pokemonMove = returnXPokemonMovesArray(10).map(moveObject => {
+    return <li key={moveObject.move.name}>{moveObject.move.name}</li>
+  })
+
   const pokemonType = pokemon.types.map(typeObject => {
     return <li key={typeObject.type.name}>{typeObject.type.name}</li>;
   })
@@ -22,21 +32,21 @@ const SelectedPokemonDetail = ({pokemon}) => {
     }
   }
 
-  const returnTypeSingularOrPlural = () => {
-    let typeOrTypes
+  const returnSingularOrPluralHeading = (arrayList, baseWord) => {
+    let singularOrPlural
 
-    if (pokemonType.length > 1){
-      typeOrTypes = <p>Types:</p>;
+    if (arrayList.length > 1){
+      singularOrPlural = <p>{`${baseWord}s`}:</p>;
     } else {
-      typeOrTypes = <p>Type:</p>;
+      singularOrPlural = <p>{baseWord}:</p>;
     }
 
-    return typeOrTypes;
-  } 
+    return singularOrPlural;
+  }
 
   return(
     <article id="pokemon-info-box">
-      { returnTypeSingularOrPlural() }
+      { returnSingularOrPluralHeading(pokemonType, 'Type') }
       <ul>
         { pokemonType }
       </ul>
@@ -44,6 +54,10 @@ const SelectedPokemonDetail = ({pokemon}) => {
       <p>{pokemonWeight}kg</p>
       <p>Height:</p>
       { pokemonHeight() }
+      { returnSingularOrPluralHeading(pokemonMove, 'Move') }
+      <ul>
+        { pokemonMove }
+      </ul>
     </article>
   )
 }
