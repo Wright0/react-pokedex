@@ -2,6 +2,13 @@
 
 Built using the [PokeAPI](https://pokeapi.co/) for the data and CSS for the image.
 
+<p align="center">
+  <img src="https://github.com/Wright0/react-pokedex/blob/master/pokedex.gif" alt="Pokedex animation">
+</p>
+
+
+
+
 ***
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
